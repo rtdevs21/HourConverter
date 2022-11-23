@@ -51,7 +51,7 @@ public class HourConvert {
         }
 //        Log.e("TAG", "HourConvert: "+hh1+":"+mm1+ "" +set );
         if (withAMPM){
-            return hh1+":"+mm1;
+            return hh1+":"+mm1+"";
         }else{
             return hh1+":"+mm1+ "" +set;
         }
