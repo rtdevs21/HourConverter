@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Hour Converter Library"
 include ':app'
-include ':HourConverter'
+//include ':HourConverter'
