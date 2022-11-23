@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
     TextView hourText;
     String time;
 
-
    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
         hourText = findViewById(R.id.hourText);
 
-//        String time = convertTo.ConvertTo("16:17",true);
+//       HourConvert hourConvert = new HourConvert();
+//
+//       time = hourConvert.ConvertTo("16:17",true);
         hourText.setText(String.valueOf("16:17 to: "+time));
 
 
