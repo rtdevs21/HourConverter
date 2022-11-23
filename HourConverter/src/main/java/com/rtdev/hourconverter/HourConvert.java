@@ -2,7 +2,7 @@ package com.rtdev.hourconverter;
 
 import android.annotation.SuppressLint;
 
-public class ConvertTo {
+public class HourConvert {
 
     @SuppressLint("NotConstructor")
     public String ConvertTo(String time, Boolean withAMPM ) {
