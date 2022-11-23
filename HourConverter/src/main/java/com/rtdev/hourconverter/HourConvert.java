@@ -5,10 +5,10 @@ import android.annotation.SuppressLint;
 public class HourConvert {
 
     @SuppressLint("NotConstructor")
-    public String ConvertTo(String time, Boolean withAMPM ) {
+    public String ConvertTo(String times, Boolean with_AMPM ) {
 
         String set = "am";
-        String[] time1 = time.split(":");
+        String[] time1 = times.split(":");
         String hh1 = time1[0].trim();
         String mm1 = time1[1].trim();
 
@@ -50,7 +50,7 @@ public class HourConvert {
             set = "pm";
         }
 //        Log.e("TAG", "HourConvert: "+hh1+":"+mm1+ "" +set );
-        if (withAMPM){
+        if (with_AMPM){
             return hh1+":"+mm1+"";
         }else{
             return hh1+":"+mm1+ "" +set;
