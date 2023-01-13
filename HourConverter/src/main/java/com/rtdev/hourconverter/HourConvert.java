@@ -4,11 +4,17 @@ import android.annotation.SuppressLint;
 
 public class HourConvert {
 
-    @SuppressLint("NotConstructor")
-    public String ConvertTo(String time, Boolean withAMPM ) {
+
+    public HourConvert() {
+
+
+    }
+
+
+    public String ConvertTo(String times, Boolean with_AMPM ) {
 
         String set = "am";
-        String[] time1 = time.split(":");
+        String[] time1 = times.split(":");
         String hh1 = time1[0].trim();
         String mm1 = time1[1].trim();
 
@@ -50,12 +56,38 @@ public class HourConvert {
             set = "pm";
         }
 //        Log.e("TAG", "HourConvert: "+hh1+":"+mm1+ "" +set );
-     if (withAMPM){
+        if (with_AMPM){
             return hh1+":"+mm1+ "" +set;
         }else{
             return hh1+":"+mm1;
         }
 
+    }
+
+//    130 minutes = 2:10 Minutes
+    public String ConvertMinToTimeFormat(String m){
+        String time ="";
+        Double totalsec, totalMinute;
+
+        if (!m.matches("[0-9]+")){
+            return null;
+        }
+
+        int min = Integer.parseInt(m);
+
+        if(min == 60){
+            time = "1:00";
+        }
+        else if(min < 60){
+            time = "00:"+String.valueOf(min);
+        }
+        else{
+            Double tm = Double.parseDouble(m);
+            totalsec = tm * 60;
+            time = String.valueOf(totalsec / 3600)+" "+String.valueOf((totalsec % 3600)/60);
+        }
+
+        return time;
 
     }
 }
