@@ -91,7 +91,15 @@ public class HourConvert {
 
             int hh  = Integer.parseInt(String.valueOf(totalsec / 3600));
             int mm  = Integer.parseInt(String.valueOf((totalsec % 3600)/60));
-            time = String.valueOf(hh)+":"+String.valueOf(mm);
+            String m1 =  String.valueOf(mm);
+            if(m1.equalsIgnoreCase("0")){
+                m1 = "00";
+            }else if (m1.equalsIgnoreCase("00")){
+                m1 = "00";
+            }
+
+
+            time = String.valueOf(hh)+":"+String.valueOf(m1);
         }
 
 
