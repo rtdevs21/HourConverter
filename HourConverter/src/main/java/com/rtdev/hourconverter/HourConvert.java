@@ -71,7 +71,7 @@ public class HourConvert {
     public String ConvertMinToTimeFormat(String m){
         String time ="";
         DecimalFormat dF = new DecimalFormat("##");
-        Double totalsec = null, totalMinute;
+        int totalsec, totalMinute;
 
         if (!m.matches("[0-9]+")){
             return null;
@@ -86,8 +86,9 @@ public class HourConvert {
             time = "00:"+String.valueOf(min);
         }
         else{
-            Double tm = Double.parseDouble(m);
+            int tm = Integer.parseInt(m);
             totalsec = tm * 60;
+
             int hh  = Integer.parseInt(String.valueOf(totalsec / 3600));
             int mm  = Integer.parseInt(String.valueOf((totalsec % 3600)/60));
             time = String.valueOf(hh)+":"+String.valueOf(mm);
