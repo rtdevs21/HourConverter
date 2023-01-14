@@ -1,4 +1,4 @@
-﻿# HourConverter
+# HourConverter
 24 Hour to 12 Hour Converter build by RTDev
 
 
@@ -34,6 +34,18 @@ Init your Hour Converter
        
        //if don't need am or pm format
        String time = hourConvert.ConvertTo("23:22",false);
+
+
+
+
+Init your Total minutes to real time coverter
+
+       HourConvert hourConvert = new HourConvert();
+	String duration= "130";
+
+       String time = hourConvert.ConvertMinToTimeFormat(duration)
+       
+
 
 Note:
 ```ruby
