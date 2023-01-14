@@ -2,6 +2,8 @@ package com.rtdev.hourconverter;
 
 import android.annotation.SuppressLint;
 
+import java.text.DecimalFormat;
+
 public class HourConvert {
 
 
@@ -10,7 +12,7 @@ public class HourConvert {
 
     }
 
-
+    @SuppressLint("NotConstructor")
     public String ConvertTo(String times, Boolean with_AMPM ) {
 
         String set = "am";
@@ -65,9 +67,11 @@ public class HourConvert {
     }
 
 //    130 minutes = 2:10 Minutes
+
     public String ConvertMinToTimeFormat(String m){
         String time ="";
-        Double totalsec, totalMinute;
+        DecimalFormat dF = new DecimalFormat("##");
+        Double totalsec = null, totalMinute;
 
         if (!m.matches("[0-9]+")){
             return null;
@@ -84,9 +88,13 @@ public class HourConvert {
         else{
             Double tm = Double.parseDouble(m);
             totalsec = tm * 60;
-            time = String.valueOf(totalsec / 3600)+" "+String.valueOf((totalsec % 3600)/60);
+            int hh  = Integer.parseInt(String.valueOf(totalsec / 3600));
+            int mm  = Integer.parseInt(String.valueOf((totalsec % 3600)/60));
+            time = String.valueOf(hh)+":"+String.valueOf(mm);
         }
 
+
+      //  decimalFormat.format((totalsec % 3600)/60);
         return time;
 
     }
