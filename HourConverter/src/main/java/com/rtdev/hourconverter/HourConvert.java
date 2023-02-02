@@ -20,7 +20,10 @@ public class HourConvert {
         String hh1 = time1[0].trim();
         String mm1 = time1[1].trim();
 
-        if (hh1.contains("13")) {
+        if (hh1.contains("12")) {
+            set = "pm";
+        }
+          else if (hh1.contains("13")) {
             hh1= hh1.replace("13", "1");
             set = "pm";
         } else if (hh1.contains("14")) {
