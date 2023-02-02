@@ -59,7 +59,7 @@ public class HourConvert {
             set = "pm";
         } else if (hh1.contains("24")) {
             hh1= hh1.replace("24", "12");
-            set = "pm";
+            set = "am";
         }
 //        Log.e("TAG", "HourConvert: "+hh1+":"+mm1+ "" +set );
         if (with_AMPM){
